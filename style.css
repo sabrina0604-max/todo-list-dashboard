@@ -1,0 +1,301 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #000;
+    color: #f1f1f1;
+}
+
+#container{
+    display: flex;
+}
+
+#barra-lateral{
+    width: 30px;
+    height: 100vh;
+    background-color: #111;
+    transition: 0.3s;
+    padding: 1rem;
+    overflow: hidden;    
+    border-right: 1px solid #313030;
+}
+
+#nav-bar-lateral{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: #ccc !important;
+}
+
+#barra-lateral span,
+#barra-lateral h4,
+#barra-lateral p,
+#frase-motivacional{
+    opacity: 0;
+    transition: 0.3s;
+}
+
+#barra-lateral:hover{
+    min-width: 200px;
+}
+
+#barra-lateral:hover span,
+#barra-lateral:hover h4,
+#barra-lateral:hover p,
+#barra-lateral:hover #frase-motivacional{
+    opacity: 1;
+}
+
+#titulo-barra{
+    margin-bottom: 2rem;
+    font-size: 30px;
+    color: #fff !important;
+    font-weight: bold;
+}
+
+#titulo-barra i{
+    width: 30px;
+    text-align: center;
+    color: red;
+}
+
+#titulo-barra span{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+}
+
+.item-menu{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 22px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.item-menu i{
+    font-size: 22px;
+    text-align: center;
+}
+
+#frase-motivacional{
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    background-color: #000;
+    margin: auto auto 2rem;
+    align-self: center;
+    overflow: hidden;
+    border: 1px solid #313030;
+    border-radius: 1rem;
+}
+
+#frase-motivacional i{
+    display: flex;
+    background-color: red;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+#frase-motivacional h4{
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+#frase-motivacional span{
+    color: rgb(255, 34, 34);
+}
+
+#frase-motivacional p{
+    margin: 0.5rem;
+    color: #ccc;
+}
+ 
+#conteudo{
+    margin: 1rem 2rem;
+    width: 100%;
+}
+
+#titulo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#titulo p{
+    font-size: 15px;
+    color: #ccc;
+}
+
+.btn{
+    background-color: red;
+    color: #fff;
+    align-self: center;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.btn:hover{
+    opacity: 1;
+}
+
+#incluir-tarefa{
+    display: flex;
+    margin: 1rem 0;
+    background-color: #111;
+    border-radius: 1rem;
+    padding: 1rem;
+    gap: 20px;
+}
+
+#incluir-tarefa input{
+    flex: 1;
+}
+
+input,
+select{
+    background-color: #000;
+    border: 1px solid #313030;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: #ccc;
+}
+
+#container-btn{
+    display: flex;
+    margin-left: auto;
+    gap: 20px;
+}
+
+#abas{
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.aba{
+    padding: 0.5rem 1rem;
+    background-color: #070707;
+    border: 1px solid #313030;
+    border-radius: 0.5rem;
+
+}
+
+.lista-tarefas{
+    background-color: #070707;
+    border: 1px solid #313030;
+    border-radius: 1rem;
+    margin: 1rem 0;
+}
+
+.tarefa{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #313030;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.data{
+    margin-left: auto;
+    color: #ccc !important;
+    font-weight: normal !important;
+}
+
+.tarefa:last-child{
+    border-bottom: none;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2pxsoli #666;
+    border-radius: 4px;
+    background-color: #111;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="checkbox"]:checked{
+    background-color: #c1121f;
+    border-color: #c1121f;
+    color: #fff;
+}
+
+input[type="checkbox"]:checked::before{
+    content: "✓";
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#quantidade{
+    background-color: #070707;
+    border: 1px solid #313030;
+    border-radius: 1rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    color: #ccc;
+}
+
+.editar{
+    background-color: #111;
+    color: #ccc;
+    align-self: center;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.editar:hover{
+    opacity: 1;
+}
+
+.escondida{
+    display: none;
+}
+
+.concluida{
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.ativa{
+    background-color: red;
+}
+
+@media(max-width :450px){
+    #barra-lateral{
+        display: none;
+    }
+
+    #abas{
+        display: none;
+    }
+    #conteudo,
+    #incluir-tarefa input,
+    #incluir-tarefa select,
+    #incluir-tarefa button{
+        width: 100%;
+    }
+}

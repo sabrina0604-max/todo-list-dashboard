@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List to do</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <div id="container">
+        <div id="barra-lateral">
+            <nav id="nav-bar-lateral">
+            <div id="menu">
+                <div id="titulo-barra">
+                    <span>
+                    <i class="fa-solid fa-square-check"></i> 
+                    To-do List
+                    </span>
+                </div>
+                <div class="item-menu selecionado">
+                    <i class="fa-solid fa-list-check"></i> 
+                    <span>Tarefas</span>
+                </div>
+                <div class="item-menu">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span>Estatísticas</span>
+                </div>
+                <div class="item-menu">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </div>
+            </div>
+
+            <div id="frase-motivacional">
+                <i class="fa-solid fa-chart-line"></i>
+                <h4>Foco no progresso, <span>não na </span>perfeição.</h4>
+                <p>Você está indo bem!</p>
+            </div>
+            </nav>
+        </div>
+        <div id="conteudo">
+            <main>
+                <div id="titulo">
+                    <div id="escrita">
+                        <h1>Olá, <span id="nome-usuario"></span> 👋</h1>
+                        <p>Organize suas tarefas e seja mais produtiva!</p>
+                    </div>
+                </div>
+                <div id="incluir-tarefa">
+                    <input type="text" name="tarefa" id="tarefa" placeholder="O que você precisa fazer?">
+                    <div id="container-btn">
+                        <select id="filtro">
+                            <option value="todas">Todas</option>
+                            <option value="pendentes">Pendentes</option>
+                            <option value="concluidas">Concluídas</option>
+                        </select>
+                        <button class="btn adicionar">Adicionar</button>
+                    </div>
+                </div>
+                <div id="abas">
+                    <div class="aba todas ativa">Todas<span></span></div>
+                    <div class="aba pendentes">Pendentes<span></span></div>
+                    <div class="aba concluidas">Concluídas<span></span></div>
+                </div>
+                <section class="lista-tarefas">
+                </section>
+                <div id="quantidade">
+                    <p>Total: <span id="quantidade-span">0</span> tarefas</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
