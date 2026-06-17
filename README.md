@@ -1,8 +1,8 @@
 # To-Do List Dashboard
 
-Aplicação de gerenciamento de tarefas desenvolvida com HTML, CSS e JavaScript.
+Aplicação de gerenciamento de tarefas desenvolvida com HTML, CSS e JavaScript puro, focada na prática de manipulação do DOM, persistência de dados e criação de interfaces responsivas.
 
-## Funcionalidades
+## 🚀 Funcionalidades
 
 * Adicionar tarefas
 * Editar tarefas
@@ -15,49 +15,66 @@ Aplicação de gerenciamento de tarefas desenvolvida com HTML, CSS e JavaScript.
   * Concluídas
 * Contador dinâmico de tarefas
 * Personalização do nome do usuário
+* Data e horário de criação das tarefas
+* Salvamento automático utilizando LocalStorage
+* Persistência das tarefas após atualizar ou fechar o navegador
 * Layout responsivo para dispositivos móveis
+* Interface moderna inspirada em dashboards de produtividade
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 * HTML5
 * CSS3
-* JavaScript (ES6)
+* JavaScript (ES6+)
+* LocalStorage
 * Font Awesome
 
-## Objetivo do Projeto
+## 📚 Conceitos Praticados
 
-Este projeto foi desenvolvido com o objetivo de praticar conceitos fundamentais de JavaScript, como:
+Durante o desenvolvimento deste projeto foram aplicados conceitos importantes de Front-End:
 
 * Manipulação do DOM
 * Eventos
-* Arrays e Objetos
+* Criação dinâmica de elementos
 * Funções
 * Condicionais
+* Arrays e Objetos
+* LocalStorage
 * Responsividade
-* Organização de código
+* Organização e reutilização de código
+* Manipulação de classes CSS com JavaScript
 
-## Como Executar
+## 💻 Como Executar
 
-1. Clone o repositório
+1. Clone o repositório:
 
 bash
 git clone https://github.com/sabrina0604-max/todo-list-dashboard.git
 
 
-2. Abra o arquivo index.html no navegador.
+2. Acesse a pasta do projeto.
 
-## Melhorias Futuras
+3. Abra o arquivo index.html em seu navegador.
 
-* Gráficos de produtividade
+## 🎯 Objetivo do Projeto
+
+O objetivo deste projeto foi aprofundar conhecimentos em JavaScript através da construção de uma aplicação funcional de gerenciamento de tarefas, simulando recursos presentes em aplicações reais de produtividade.
+
+## 🔮 Melhorias Futuras
+
+* Dashboard de estatísticas
+* Barra de progresso das tarefas
+* Contador de tarefas concluídas e pendentes
+* Busca de tarefas
+* Tema claro/escuro completo
 * Categorias de tarefas
-* Modo escuro/claro
-* Drag and Drop
 * Datas de vencimento
-* Prioridades para tarefas
-* LocalStorage
+* Sistema de prioridades
+* Drag and Drop
+* Integração com APIs externas
 
-## Autor
+## 👩‍💻 Autora
 
-Sabrina Rodrigues Medeiros
+*Sabrina Rodrigues Medeiros*
 
-Desenvolvedora Front-End.
+Desenvolvedora Front-End em formação, focada na criação de interfaces modernas, responsivas e funcionais utilizando HTML, CSS e JavaScript.
