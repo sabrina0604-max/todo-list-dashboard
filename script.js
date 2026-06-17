@@ -7,6 +7,34 @@ const pendentes = document.querySelector(".pendentes");
 const concluidas = document.querySelector(".concluidas");
 const quantidade = document.querySelector("#quantidade-span");
 const nome = document.querySelector("#nome-usuario");
+const tema = document.querySelector(".tema");
+
+function salvarTarefas(){
+    const tarefas = document.querySelectorAll(".tarefa");
+    const lista = [];
+
+    tarefas.forEach((tarefa) =>{
+        const texto = tarefa.querySelector("p").innerText;
+        const data = tarefa.querySelector(".data").innerText;
+        const concluida = tarefa.classList.contains("concluida");
+
+        lista.push({
+            texto: texto,
+            data: data,
+            concluida: concluida
+        });
+    });
+
+    localStorage.setItem("tarefas", JSON.stringify(lista));
+}
+
+function carregarTarefas(){
+    const tarefasSalvas = JSON.parse(localStorage.getItem("tarefas"));
+
+        tarefasSalvas.forEach((tarefa) => {
+            adicionarTarefa(tarefa.texto, tarefa.data, tarefa.concluida);
+        });
+    }
 
 function digitarNome(){
     const novoNome = prompt("Digite seu nome:", nome.innerText);
@@ -15,19 +43,20 @@ function digitarNome(){
 
 digitarNome();
 
+
 function atualizarQuantidade(){
     const lista = document.querySelectorAll(".tarefa:not(.escondida)");
     quantidade.innerText = lista.length;
 }
 
-function adicionarTarefa(){
+function adicionarTarefa(textoSalvo = null, dataSalva = null, concluidaSalva = false){
 
-    if(inputTarefa.value === ""){
+    if(inputTarefa.value === "" && textoSalvo === null){
         alert("Digite uma tarefa")
         return
     }
 
-    const textoDigitado = inputTarefa.value
+    const textoDigitado = textoSalvo || inputTarefa.value;
 
     const novaTarefa = document.createElement("div")
     novaTarefa.classList.add("tarefa")
@@ -38,20 +67,25 @@ function adicionarTarefa(){
     novaTarefa.classList.toggle("concluida")
     alterarCheck();
     atualizarQuantidade();
+    salvarTarefas();
     });
 
     const textoTarefa = document.createElement("p")
     textoTarefa.innerText = textoDigitado
 
-    const horario = document.createElement("span")
-    const agora = new Date()
-    horario.innerText = agora.toLocaleTimeString("pt-BR",{
-        day:"2-digit",
-        month:"2-digit",
-        year:"numeric",
-        hour:"2-digit",
-        minute:"2-digit"
-    })
+    const horario = document.createElement("span");
+    if(dataSalva){
+        horario.innerText = dataSalva;
+    }else{
+        const agora = new Date()
+        horario.innerText = agora.toLocaleTimeString("pt-BR",{
+            day:"2-digit",
+            month:"2-digit",
+            year:"numeric",
+            hour:"2-digit",
+            minute:"2-digit"
+        });
+    }
     horario.classList.add("data");
 
     const btnEditar = document.createElement("button")
@@ -62,6 +96,7 @@ function adicionarTarefa(){
         const novoTexto = prompt("Edite sua tarefa:", textoTarefa.innerText);
         if(novoTexto !== null && novoTexto.trim() !== ""){
             textoTarefa.innerText = novoTexto.trim();
+            salvarTarefas();
         }
     })
 
@@ -71,7 +106,13 @@ function adicionarTarefa(){
     btnExcluir.addEventListener("click", () =>{
         novaTarefa.remove();
         atualizarQuantidade();
-    }) 
+        salvarTarefas();
+    });
+
+    if(concluidaSalva){
+        novaTarefa.classList.add("concluida");
+        checkBox.checked = true;
+    }
 
     novaTarefa.appendChild(checkBox)
     novaTarefa.appendChild(textoTarefa)
@@ -85,7 +126,12 @@ function adicionarTarefa(){
 
     alterarCheck();
     atualizarQuantidade();
+    salvarTarefas();
 } 
+
+tema.addEventListener ("click", () => {
+    document.body.classList.toggle("tema-claro");
+})
 
 btnAdicionar.addEventListener("click", () => {
     adicionarTarefa();
@@ -129,6 +175,8 @@ function alterarCheck(){
             pendentes.classList.add("ativa");
             concluidas.classList.remove("ativa");
         }
+        
+        atualizarQuantidade();
     });
 }
 
@@ -170,4 +218,6 @@ concluidas.addEventListener("click", () =>{
     atualizarQuantidade();
 })
 
+
+carregarTarefas();
 atualizarQuantidade();
