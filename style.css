@@ -26,7 +26,7 @@ body{
     display: flex;
     flex-direction: column;
     height: 100%;
-    color: #ccc !important;
+    color: #ccc;
 }
 
 #barra-lateral span,
@@ -51,7 +51,7 @@ body{
 #titulo-barra{
     margin-bottom: 2rem;
     font-size: 30px;
-    color: #fff !important;
+    color: #fff;
     font-weight: bold;
 }
 
@@ -213,8 +213,8 @@ select{
 
 .data{
     margin-left: auto;
-    color: #ccc !important;
-    font-weight: normal !important;
+    color: #ccc;
+    font-weight: normal;
 }
 
 .tarefa:last-child{
@@ -298,4 +298,59 @@ input[type="checkbox"]:checked::before{
     #incluir-tarefa button{
         width: 100%;
     }
+}
+
+body.tema-claro{
+    background-color: #f5f5f5;
+    color: #111;
+}
+
+body.tema-claro #barra-lateral,
+body.tema-claro #incluir-tarefa,
+body.tema-claro .lista-tarefas,
+body.tema-claro #quantidade{
+    background-color: white;
+    color: #111;
+}
+
+body.tema-claro #escrita p,
+body.tema-claro p,
+body.tema-claro span,
+body.tema-claro i{
+    color: #111;
+}
+
+body.tema-claro input,
+body.tema-claro select,
+body.tema-claro .editar{
+    background-color: #ccc;
+    color: #111;
+}
+
+body.tema-claro .btn{
+    background-color: red;
+    opacity: 0.8;
+    color: #fff;
+}
+
+body.tema-claro .btn:hover{
+    opacity: 1;
+}
+
+
+body.tema-claro .aba{
+    color: #fff;
+}
+
+body.tema-claro .data{
+    color:#111
+}
+
+body.tema-claro #frase-motivacional{
+    background-color: #ccc;
+}
+
+body.tema-claro #frase-motivacional h4,
+body.tema-claro #frase-motivacional p{
+    color: #111;
 }
